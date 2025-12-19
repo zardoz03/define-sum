@@ -223,7 +223,8 @@ exec guile -s $0 $@
      (case field
        ((quux) (apply make-my-sum-quux args))
        ((bar) (apply make-my-sum-bar args))
-       ((foo) (apply make-my-sum-foo args))))
+       ((foo) (apply make-my-sum-foo args))
+       ((null) (apply make-null-my-sum args))))
 
  (define-sum my-sum
    (foo
