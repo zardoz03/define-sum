@@ -1,0 +1,39 @@
+* =define-sum=
+This is a macro that generates a sum type via a sum of products, so
+you can store data alongside the enum case. It uses =(srfi :9)=/
+=(scheme base)='s =define-record-type= to do this, along with
+predicate for the entire family and a generic constructor.
+
+For example: 
+#+begin_src scheme
+(define-sum my-sum 
+  (foo 
+   bar 
+   (baz frob) 
+   (quux yrub herb)))
+#+end_src
+Generates =my-sum-foo=, =my-sum-bar= et al, with the list format
+representing the name then the fields.
+
+I did not make setters so you will have to allocate a new record
+if you want to change the value inside the record.
+
+The getters for the value named =frob= on =baz= is =my-sum-baz-frob=,
+for instance.
+
+There is also a =null-my-sum= object created. If there were record
+inheritance, we would inherit from that.
+
+There is a predicate =my-sum?= that invokes every record's
+predicate in a massive =or=.
+
+There is also a constructor =make-my-sum= that takes in a symbol
+and dispatches to the field's constructor in question. There is
+also the =null= field to construct the empty "parent" type.
+
+See the end of sums-of-products.scm for some concrete examples.
+(It also includes macroexpander examples aswell.)
+
+* Acknowledgements
+I got some debugging help with syntax quoting and that from
+@technochess on discord.
