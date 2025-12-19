@@ -236,10 +236,10 @@ exec guile -s $0 $@
  => Print<"2\n">
  
  (make-my-sum 'null)
- => #<my-sum>
+ => "#<my-sum>"
 
  (make-my-sum-quux 1 2)
- => #<my-sum-quux yrub: 1 herb: 2>
+ => "#<my-sum-quux yrub: 1 herb: 2>"
  (make-my-sum 'quux 1 2)
- => #<my-sum-quux yrub: 1 herb: 2>
+ => "#<my-sum-quux yrub: 1 herb: 2>"
  #||#)
