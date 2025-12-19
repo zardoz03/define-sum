@@ -1,6 +1,6 @@
 * =define-sum=
 This is a macro that generates a sum type via a sum of products, so
-you can store data alongside the enum case. It uses =(srfi :9)=/
+you can store data alongside the enum case. It uses =(srfi :9)= /
 =(scheme base)='s =define-record-type= to do this, along with
 predicate for the entire family and a generic constructor.
 
