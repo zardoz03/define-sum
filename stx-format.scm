@@ -20,6 +20,7 @@
       (string->symbol fmtd-str)))
 
   (define (syntax-format stx fmt . args)
+    "stx * str * &rest[(str U sym)] -> identifier"
     (let* ((strgs
             (map (lambda (x)
                    (cond ((ensure-string x) => identity)

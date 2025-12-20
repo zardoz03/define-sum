@@ -1,9 +1,3 @@
-#!/bin/sh
-# -*- mode: scheme -*-
-# vim: ft=scheme
-exec guile -s $0 $@
-!#
-
 (use-modules (scheme base))
 
 (eval-when (eval load compile)
